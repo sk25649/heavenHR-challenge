@@ -3,16 +3,19 @@ import * as types from '../constants/ActionTypes';
 const initialState = {
   friendsById: [
     {
+      id: 0,
       name: 'Theodore Roosevelt',
       starred: true,
       sex: 'Male'
     },
     {
+      id: 1,
       name: 'Abraham Lincoln',
       starred: false,
       sex: 'Male'
     },
     {
+      id: 2,
       name: 'George Washington',
       starred: false,
       sex: 'Male'
@@ -29,7 +32,10 @@ export default function friends(state = initialState, action) {
         friendsById: [
           ...state.friendsById,
           {
-            name: action.name
+            name: action.name,
+            starred: false,
+            sex: '',
+            id: state.friendsById.length
           }
         ],
       };
@@ -43,6 +49,7 @@ export default function friends(state = initialState, action) {
     case types.STAR_FRIEND:
       let friends = [...state.friendsById];
       let friend = friends.find((item, index) => index === action.id);
+      debugger
       friend.starred = !friend.starred;
       return {
         ...state,

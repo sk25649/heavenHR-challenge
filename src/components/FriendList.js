@@ -12,7 +12,7 @@ class FriendList extends Component {
             return (
               <FriendListItem
                 key={index}
-                id={index}
+                id={friend.id}
                 name={friend.name}
                 starred={friend.starred}
                 sex={friend.sex}
