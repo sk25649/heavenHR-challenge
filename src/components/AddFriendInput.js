@@ -3,24 +3,10 @@ import classnames from 'classnames';
 import styles from './AddFriendInput.css';
 
 class AddFriendInput extends Component {
-
-  render () {
-    return (
-      <input
-        type="text"
-        autoFocus="true"
-        className={classnames('form-control', styles.addFriendInput)}
-        placeholder="Type the name of a friend"
-        value={this.state.name}
-        onChange={this.handleChange.bind(this)}
-        onKeyDown={this.handleSubmit.bind(this)} />
-    );
-  }
-
   constructor (props, context) {
     super(props, context);
     this.state = {
-      name: this.props.name || '',
+      name: this.props.name || ''
     };
   }
 
@@ -36,6 +22,18 @@ class AddFriendInput extends Component {
     }
   }
 
+  render () {
+    return (
+      <input
+        type="text"
+        autoFocus="true"
+        className={classnames('form-control', styles.addFriendInput)}
+        placeholder="Type the name of a friend"
+        value={this.state.name}
+        onChange={this.handleChange.bind(this)}
+        onKeyDown={this.handleSubmit.bind(this)} />
+    );
+  }
 }
 
 AddFriendInput.propTypes = {

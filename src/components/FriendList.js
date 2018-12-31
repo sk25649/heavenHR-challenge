@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import styles from './FriendList.css';
+import withPagination from './withPagination';
 import FriendListItem from './FriendListItem';
 
 class FriendList extends Component {
@@ -14,6 +15,7 @@ class FriendList extends Component {
                 id={index}
                 name={friend.name}
                 starred={friend.starred}
+                sex={friend.sex}
                 {...this.props.actions} />
             );
           })
@@ -29,4 +31,4 @@ FriendList.propTypes = {
   actions: PropTypes.object.isRequired
 };
 
-export default FriendList;
+export default withPagination(FriendList);

@@ -1,0 +1,11 @@
+.navigationContainer {
+    height: 25px;
+}
+
+.prev {
+    float: left;
+}
+
+.next {
+    float: right;
+}
